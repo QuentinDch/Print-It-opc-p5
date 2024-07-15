@@ -19,6 +19,10 @@ const slides = [
 ];
 console.log(slides);
 
+const nbrElements = slides.length;
+console.log(nbrElements);
+
+// Ajout des Event Listeners sur les buttons
 const buttons = document.querySelectorAll(".arrow");
 console.log(buttons);
 
@@ -27,3 +31,20 @@ buttons.forEach((button) => {
     console.log(event.currentTarget);
   });
 });
+
+// Ajout des Bullet Points au slider
+const dots = document.querySelector(".dots");
+console.log(dots);
+
+for (let i = 0; i < slides.length; i++) {
+  let dot = document.createElement("div");
+  dot.classList.add("dot");
+  dots.appendChild(dot);
+  console.log(dot);
+  if (i === 0) {
+    dot.classList.add("dot_selected");
+    console.log(dot);
+  }
+}
+
+// Modification du slide au clic d'un bouton
