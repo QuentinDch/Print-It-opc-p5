@@ -17,34 +17,26 @@ const slides = [
     tagLine: "Autocollants <span>avec découpe laser sur mesure</span>",
   },
 ];
-console.log(slides);
-
-const nbrElements = slides.length;
-console.log(nbrElements);
-
-// Ajout des Event Listeners sur les buttons
-const buttons = document.querySelectorAll(".arrow");
-console.log(buttons);
-
-buttons.forEach((button) => {
-  button.addEventListener("click", function (event) {
-    console.log(event.currentTarget);
-  });
-});
 
 // Ajout des Bullet Points au slider
-const dots = document.querySelector(".dots");
-console.log(dots);
+const dotsContainer = document.querySelector(".dots");
 
-for (let i = 0; i < slides.length; i++) {
-  let dot = document.createElement("div");
-  dot.classList.add("dot");
-  dots.appendChild(dot);
-  console.log(dot);
-  if (i === 0) {
-    dot.classList.add("dot_selected");
-    console.log(dot);
+function displayDots(container) {
+  for (let i = 0; i < slides.length; i++) {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    if (i === 0) {
+      dot.classList.add("dot_selected");
+    }
+    container.appendChild(dot);
   }
 }
+displayDots(dotsContainer);
 
-// Modification du slide au clic d'un bouton
+// Ajout des Event Listeners sur les buttons
+const prevButton = document.getElementById("prev-slide");
+const nextButton = document.getElementById("next-slide");
+
+prevButton.addEventListener("click", () => {});
+
+nextButton.addEventListener("click", () => {});
