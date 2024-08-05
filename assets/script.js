@@ -1,19 +1,19 @@
 const slides = [
   {
-    image: "slide1.jpg",
+    image: "./assets/images/slideshow/slide1.jpg",
     tagLine: "Impressions tous formats <span>en boutique et en ligne</span>",
   },
   {
-    image: "slide2.jpg",
+    image: "./assets/images/slideshow/slide2.jpg",
     tagLine:
       "Tirages haute définition grand format <span>pour vos bureaux et events</span>",
   },
   {
-    image: "slide3.jpg",
+    image: "./assets/images/slideshow/slide3.jpg",
     tagLine: "Grand choix de couleurs <span>de CMJN aux pantones</span>",
   },
   {
-    image: "slide4.png",
+    image: "./assets/images/slideshow/slide4.png",
     tagLine: "Autocollants <span>avec découpe laser sur mesure</span>",
   },
 ];
@@ -21,22 +21,35 @@ const slides = [
 // Ajout des Bullet Points au slider
 const dotsContainer = document.querySelector(".dots");
 
-function displayDots(container) {
+function displayDots() {
   for (let i = 0; i < slides.length; i++) {
-    const dot = document.createElement("div");
-    dot.classList.add("dot");
+    const dotElement = document.createElement("div");
+    dotElement.classList.add("dot");
     if (i === 0) {
-      dot.classList.add("dot_selected");
+      dotElement.classList.add("dot_selected");
     }
-    container.appendChild(dot);
+    dotsContainer.appendChild(dotElement);
   }
 }
-displayDots(dotsContainer);
+displayDots();
 
 // Ajout des Event Listeners sur les buttons
-const prevButton = document.getElementById("prev-slide");
 const nextButton = document.getElementById("next-slide");
+const prevButton = document.getElementById("prev-slide");
+const imgElement = document.querySelector(".banner-img");
+const tagLineElement = document.querySelector("#banner p");
+let currentSlideIndex = 0;
 
-prevButton.addEventListener("click", () => {});
+nextButton.addEventListener("click", () => {
+  currentSlideIndex++;
+  if (currentSlideIndex >= slides.length) {
+    currentSlideIndex = 0;
+  }
+  imgElement.src = slides[currentSlideIndex].image;
+  tagLineElement.innerHTML = slides[currentSlideIndex].tagLine;
+  console.log(currentSlideIndex);
+});
 
-nextButton.addEventListener("click", () => {});
+prevButton.addEventListener("click", () => {
+  console.log(prevButton);
+});
