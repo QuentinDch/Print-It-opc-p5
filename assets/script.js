@@ -34,22 +34,40 @@ function displayDots() {
 displayDots();
 
 // Ajout des Event Listeners sur les buttons
+// Modification du slide au clic des boutons
 const nextButton = document.getElementById("next-slide");
 const prevButton = document.getElementById("prev-slide");
 const imgElement = document.querySelector(".banner-img");
 const tagLineElement = document.querySelector("#banner p");
+const dotsElements = document.querySelectorAll(".dot");
 let currentSlideIndex = 0;
 
 nextButton.addEventListener("click", () => {
+  console.log(nextButton);
+
+  dotsElements[currentSlideIndex].classList.remove("dot_selected");
+
   currentSlideIndex++;
   if (currentSlideIndex >= slides.length) {
     currentSlideIndex = 0;
   }
   imgElement.src = slides[currentSlideIndex].image;
   tagLineElement.innerHTML = slides[currentSlideIndex].tagLine;
+  dotsElements[currentSlideIndex].classList.add("dot_selected");
   console.log(currentSlideIndex);
 });
 
 prevButton.addEventListener("click", () => {
   console.log(prevButton);
+
+  dotsElements[currentSlideIndex].classList.remove("dot_selected");
+
+  currentSlideIndex--;
+  if (currentSlideIndex < 0) {
+    currentSlideIndex = slides.length - 1;
+  }
+  imgElement.src = slides[currentSlideIndex].image;
+  tagLineElement.innerHTML = slides[currentSlideIndex].tagLine;
+  dotsElements[currentSlideIndex].classList.add("dot_selected");
+  console.log(currentSlideIndex);
 });
