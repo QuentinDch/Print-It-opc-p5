@@ -3,7 +3,6 @@
 Cinquième projet du parcours **"Intégrateur web"** chez OpenClassroom. <br> L'objectif est de dynamiser le site internet statique d'une imprimerie en ajoutant un carrousel interactif avec JavaScript.
 
 ![projet ohmyfood openclassrooms](https://github.com/user-attachments/assets/d066f73b-bbee-443d-94ea-84dfa005938e)
-7d8-4c19-948d-cc3343dd0157)
 
 ## Objectifs du Projet
 
