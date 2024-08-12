@@ -51,10 +51,11 @@ nextButton.addEventListener("click", () => {
   if (currentSlideIndex >= slides.length) {
     currentSlideIndex = 0;
   }
+  console.log(currentSlideIndex);
+
   imgElement.src = slides[currentSlideIndex].image;
   tagLineElement.innerHTML = slides[currentSlideIndex].tagLine;
   dotsElements[currentSlideIndex].classList.add("dot_selected");
-  console.log(currentSlideIndex);
 });
 
 prevButton.addEventListener("click", () => {
@@ -66,8 +67,9 @@ prevButton.addEventListener("click", () => {
   if (currentSlideIndex < 0) {
     currentSlideIndex = slides.length - 1;
   }
+  console.log(currentSlideIndex);
+
   imgElement.src = slides[currentSlideIndex].image;
   tagLineElement.innerHTML = slides[currentSlideIndex].tagLine;
   dotsElements[currentSlideIndex].classList.add("dot_selected");
-  console.log(currentSlideIndex);
 });
