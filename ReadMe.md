@@ -19,4 +19,4 @@ Cinquième projet du parcours **"Intégrateur web"** chez OpenClassroom. <br> L'
 
 ## Lien du Site
 
-Vous pouvez visiter le site [Print-it] pour voir le résultat final.
+Vous pouvez visiter le site [Print-it](https://quentindch.github.io/Print-It-opc-p5/) pour voir le résultat final.
