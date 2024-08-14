@@ -19,9 +19,8 @@ const slides = [
 ];
 
 // Ajout des Bullet Points au slider
-const dotsContainer = document.querySelector(".dots");
-
 function displayDots() {
+  const dotsContainer = document.querySelector(".dots");
   for (let i = 0; i < slides.length; i++) {
     const dotElement = document.createElement("div");
     dotElement.classList.add("dot");
@@ -55,6 +54,7 @@ nextButton.addEventListener("click", () => {
 
   imgElement.src = slides[currentSlideIndex].image;
   tagLineElement.innerHTML = slides[currentSlideIndex].tagLine;
+
   dotsElements[currentSlideIndex].classList.add("dot_selected");
 });
 
@@ -71,5 +71,6 @@ prevButton.addEventListener("click", () => {
 
   imgElement.src = slides[currentSlideIndex].image;
   tagLineElement.innerHTML = slides[currentSlideIndex].tagLine;
+
   dotsElements[currentSlideIndex].classList.add("dot_selected");
 });
